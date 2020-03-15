@@ -1,0 +1,26 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage":"https://anastasiia0701.github.io/todolist",
+  "dependencies": {
+    "gh-pages": "^2.2.0",
+    "gulp": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy":"gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anastasiia0701/todolist.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anastasiia0701/todolist/issues"
+  },
+  "homepage": "https://github.com/Anastasiia0701/todolist#readme"
+}
