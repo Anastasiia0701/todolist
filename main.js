@@ -1,5 +1,8 @@
+
+
 window.onload=function(){
 	
+
 
 	var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
@@ -10,6 +13,7 @@ list.addEventListener('click', function(ev) {
 
 //добавление по нажатию на кнопку
 document.getElementById('add_item').onclick=function(){
+
   var li = document.createElement("li");
   var inputValue = document.getElementById("in").value;
   var t = document.createTextNode(inputValue);
@@ -22,7 +26,7 @@ document.getElementById('add_item').onclick=function(){
   document.getElementById("in").value = "";
 
   var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u26D2");
+  var txt = document.createTextNode("\u00D7");
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
@@ -31,8 +35,8 @@ document.getElementById('add_item').onclick=function(){
 var close = document.getElementsByClassName("close");
 for (var i = 0; i < close.length; i++) {
   close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
+    div = this.parentElement;
+      div.parentNode.removeChild(div);
   }
 }
 
@@ -40,10 +44,23 @@ for (var i = 0; i < close.length; i++) {
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
       var div = this.parentElement;
-      div.style.display = "none";
+      div.parentNode.removeChild(div);
+     /* div.style.display = "none";*/
+    
     }
   }
 }
 
+var input = document.getElementById("in");
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("add_item").click();
+  }
+});
 }
 	
+
+ 
+
